@@ -1,13 +1,16 @@
 server:
-  port: 8088
+  port: 8080
 eureka:
   instance:
     hostname: localhost
     appname: joy
-    lease-expiration-duration-in-seconds: 90 #用于定义服务失效的时间，默认90秒
-    lease-renewal-interval-in-seconds: 30 #用于定义服务续约任务的调用间隔时间，默认30秒。
+    lease-expiration-duration-in-seconds: 90 #
+    lease-renewal-interval-in-seconds: 30 #
   client:
-    register-with-eureka: false #服务端不用向注册中心注册
+    register-with-eureka: false #
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  application:
+    name: eureka-server
