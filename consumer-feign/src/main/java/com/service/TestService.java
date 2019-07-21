@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Date: 2019-07-19 19:43
  * @Description: TODO
  **/
-@FeignClient(value = "service-hi")
+@FeignClient(value = "service-hi",fallback = TestServiceHystrix.class)
 public interface TestService {
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     String consumerFeignSayHi(@RequestParam(value = "msg") String msg);
