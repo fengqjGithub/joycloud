@@ -18,7 +18,7 @@ public class TestController {
     @Autowired
     TestService testService;
 
-    @GetMapping(value = "/consumerHi")
+    @GetMapping(value = "/hi")
     public String sayHi(@RequestParam(value = "msg") String msg) {
         return testService.consumerFeignSayHi(msg);
     }

@@ -21,6 +21,7 @@
 		<module>service-hi</module>
 		<module>consumer-ribbon</module>
 		<module>consumer-feign</module>
+		<module>service-zuul</module>
 	</modules>
 
 	<properties>
