@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/fengqjGithub/spingcloudConfig  #配置git仓库地址
+          search-paths: devconfig  #配置仓库路径
+          username: #配置仓库路径
+          password: #访问git仓库的用户密码
+      label: develop #配置仓库的分支
+server:
+  port: 8087
