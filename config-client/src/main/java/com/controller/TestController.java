@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description: TODO
  **/
 @RestController
-@RefreshScope
+@RefreshScope//配置消息总线实时刷新配置文件
 public class TestController {
     @Value("${foo}")
     private String foo;
