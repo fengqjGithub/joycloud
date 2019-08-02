@@ -1,10 +1,10 @@
-package com.test;
+package com.testSpringEvent;
 
 import org.springframework.context.ApplicationEvent;
 
 /**
  * @Project: sfrz
- * @Package: com.zr.test
+ * @Package: com.zr.testSpringEvent
  * @Author: 冯前进
  * @Date: 2019-07-31 17:16
  * @Description: TODO

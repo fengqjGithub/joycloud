@@ -1,4 +1,4 @@
-package com.test;
+package com.testSpringEvent;
 
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @Project: sfrz
- * @Package: com.zr.test
+ * @Package: com.zr.testSpringEvent
  * @Author: 冯前进
  * @Date: 2019-07-31 17:21
  * @Description: TODO
