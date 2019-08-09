@@ -15,7 +15,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @Description: TODO
  **/
 @Component
-public class BeanConfig {
+public class ExecutorConfig {
     /**
      * 1、当提交一个新任务到线程池时首先线程池判断基本线程池(corePoolSize)是否已满？没满，创建一个工作线程来执行任务。满了，则进入下个流程；
      * 其次线程池判断工作队列(workQueue)是否已满？没满，则将新提交的任务存储在工作队列里。满了，则进入下个流程；
