@@ -8,22 +8,20 @@ import org.springframework.stereotype.Component;
  * @Project: joycloud
  * @Package: com.service
  * @Author: 冯前进
- * @Date: 2019-09-12 17:25
+ * @Date: 2019-09-17 15:33
  * @Description: TODO
  **/
 @Component
-public class Receiver1 {
-
+public class TopicReceiver {
+    @RabbitListener(queues = "topic.message")
     @RabbitHandler
-    @RabbitListener(queues="testQueue")
-    public void receiver(String msg){
-        System.out.println("---1----testQueue get msg:"+msg);
+    public void process1(String msg) {
+        System.out.println("topicReceiver1:" + msg);
     }
 
+    @RabbitListener(queues = "topic.messages")
     @RabbitHandler
-    @RabbitListener(queues="testQueue2")
-    public void receiver2(String msg){
-        System.out.println("---22222----testQueue2 get msg:"+msg);
+    public void process2(String msg) {
+        System.out.println("topicReceiver2:" + msg);
     }
-
 }

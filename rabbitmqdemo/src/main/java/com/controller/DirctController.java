@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description: TODO
  **/
 @RestController
-public class RabbitMqController {
+public class DirctController {
     @Autowired
     private AmqpTemplate amqpTemplate;
 

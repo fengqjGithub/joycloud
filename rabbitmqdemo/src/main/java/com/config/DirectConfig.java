@@ -12,13 +12,17 @@ import org.springframework.context.annotation.Configuration;
  * @Description: TODO
  **/
 @Configuration
-public class RabbitMqConfig {
+public class DirectConfig {
 
-   @Bean
+    /**
+     * Direct模式
+     * @return
+     */
+   @Bean(name = "queue")
     public Queue queue(){
        return new Queue("testQueue");
    }
-    @Bean
+    @Bean(name = "queue2")
     public Queue queue2(){
         return new Queue("testQueue2");
     }
