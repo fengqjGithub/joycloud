@@ -1,9 +1,12 @@
 package com.controller;
 
-import org.springframework.amqp.core.AmqpTemplate;
+import com.service.DirctSendService;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @Project: joycloud
@@ -14,16 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 public class DirctController {
-    @Autowired
-    private AmqpTemplate amqpTemplate;
+    //RabbitTemplate是AmqpTemplate的一个实现。
+    @Resource
+    private RabbitTemplate rabbitTemplate;
+    @Resource
+    private DirctSendService dirctSendService;
 
     @RequestMapping("/send.do")
     public String send(String msg){
         msg+=" ---我是消息";
-        amqpTemplate.convertAndSend("testQueue",msg);
-
-        amqpTemplate.convertAndSend("testQueue2",msg+"---2222");
-
+        rabbitTemplate.convertAndSend("testQueue",msg);
+        rabbitTemplate.convertAndSend("testQueue2",msg+"---2222");
+        return msg;
+    }
+    @RequestMapping("/send2.do")
+    public String send2(String msg){
+        dirctSendService.send(msg);
         return msg;
     }
 }
