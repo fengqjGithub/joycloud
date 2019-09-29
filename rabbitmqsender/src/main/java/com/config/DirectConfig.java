@@ -16,14 +16,16 @@ public class DirectConfig {
 
     /**
      * Direct模式
+     *
      * @return
      */
-   @Bean(name = "queue")
-    public Queue queue(){
-       return new Queue("testQueue");
-   }
+    @Bean(name = "queue")
+    public Queue queue() {
+        return new Queue("testQueue");
+    }
+
     @Bean(name = "queue2")
-    public Queue queue2(){
+    public Queue queue2() {
         return new Queue("testQueue2");
     }
 }

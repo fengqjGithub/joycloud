@@ -25,7 +25,7 @@
         <module>config-server</module>
         <module>config-client</module>
         <module>cloud-gateway</module>
-        <module>rabbitmqdemo</module>
+        <module>rabbitmqsender</module>
     </modules>
 
     <properties>
