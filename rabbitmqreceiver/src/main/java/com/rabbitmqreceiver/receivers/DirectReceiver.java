@@ -43,7 +43,7 @@ public class DirectReceiver {
         System.out.println("----------c2 get msg:" + new String(message.getBody()));
     }
     @RabbitHandler
-    @RabbitListener(queues = "testQueue2")
+    @RabbitListener(queues = "diushiQueue")
     public void receiver4(Channel channel, Message message) throws IOException, InterruptedException {
 //        Thread.sleep(1000);
         channel.basicAck(message.getMessageProperties().getDeliveryTag(), true);

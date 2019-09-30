@@ -21,13 +21,22 @@ public class DirctController {
     @RequestMapping("/send.do")
     public String send(String msg) {
         msg += " ---我是消息";
-        for(int i=0;i<10000;i++){
+        for (int i = 0; i < 10000; i++) {
 //            try {
 //                Thread.sleep(10);
-                directSender.send(msg+i);
+            directSender.send(msg + i);
 //            } catch (InterruptedException e) {
 //                e.printStackTrace();
 //            }
+        }
+        return msg;
+    }
+
+    @RequestMapping("/send2")
+    public String send2(String msg) {
+        msg += " ---我是测试丢失的--消息";
+        for (int i = 0; i < 10000; i++) {
+            directSender.send2(msg + i);
         }
         return msg;
     }

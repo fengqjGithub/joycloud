@@ -1,5 +1,6 @@
 package com.config;
 
+import org.springframework.amqp.core.Exchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,4 +29,9 @@ public class DirectConfig {
     public Queue queue2() {
         return new Queue("testQueue2");
     }
+
+//    @Bean(name = "diushiQueue")
+//    public Queue diushiQueue() {
+//        return new Queue("diushiQueue");
+//    }
 }

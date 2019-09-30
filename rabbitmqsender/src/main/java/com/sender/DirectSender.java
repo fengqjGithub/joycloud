@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * @Project: joycloud
@@ -45,7 +46,14 @@ public class DirectSender {
         });
         //id + 时间戳 全局唯一
         CorrelationData correlationData = new CorrelationData("1234567890" + new Date());
-        rabbitTemplate.convertAndSend("myexchange","testQueue2", (Object) (obj + "---2222"), correlationData);
+        rabbitTemplate.convertAndSend("testQueue2", obj + "---2222");
         return obj;
     }
+    public Object send2(Object obj) {
+        String uuid =UUID.randomUUID().toString();
+        CorrelationData correlationData = new CorrelationData("123456789-"+uuid);
+        rabbitTemplate.convertAndSend("one2manyExchange","diushiQueue", "发送:"+uuid,correlationData);
+        return obj;
+    }
+
 }
