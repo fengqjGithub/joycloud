@@ -16,5 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface TestService {
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     String consumerFeignSayHi(@RequestParam(value = "msg") String msg);
+    @RequestMapping(value = "/hello2",method = RequestMethod.GET)
+    String consumerFeignSayHi2(@RequestParam(value = "msg") String msg);
 
 }

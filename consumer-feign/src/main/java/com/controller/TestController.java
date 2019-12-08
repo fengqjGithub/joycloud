@@ -22,4 +22,8 @@ public class TestController {
     public String sayHi(@RequestParam(value = "msg") String msg) {
         return testService.consumerFeignSayHi(msg);
     }
+    @GetMapping(value = "/hi2")
+    public String sayHi2(@RequestParam(value = "msg") String msg) {
+        return testService.consumerFeignSayHi2(msg);
+    }
 }

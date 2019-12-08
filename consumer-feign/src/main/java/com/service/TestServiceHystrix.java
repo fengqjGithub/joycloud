@@ -15,4 +15,9 @@ public class TestServiceHystrix implements TestService{
     public String consumerFeignSayHi(String msg) {
         return "this is error "+msg;
     }
+
+    @Override
+    public String consumerFeignSayHi2(String msg) {
+        return "this is error2 "+msg;
+    }
 }

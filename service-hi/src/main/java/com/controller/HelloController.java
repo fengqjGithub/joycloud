@@ -21,4 +21,9 @@ public class HelloController {
     public String sayHello(@RequestParam(name = "msg") String msg){
         return "hello "+ msg +" I am from port:"+port;
     }
+
+    @RequestMapping("/hello2")
+    public String sayHello2(@RequestParam(name = "msg") String msg){
+        return "hello2 "+ msg +" I am from port:"+port;
+    }
 }
