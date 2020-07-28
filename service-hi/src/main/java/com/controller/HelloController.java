@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.common.entity.Hello;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,5 +26,10 @@ public class HelloController {
     @RequestMapping("/hello2")
     public String sayHello2(@RequestParam(name = "msg") String msg){
         return "hello2 "+ msg +" I am from port:"+port;
+    }
+
+    public static void main(String[] args) {
+        Hello hello=new Hello("张三");
+        System.out.println(hello.say("123"));
     }
 }
